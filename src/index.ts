@@ -84,9 +84,11 @@ console.log("remoteState", newRemoteState.cards.length)
 
 // change local state
 newLocalState = addCard(localState, { title: "card1", done: false })
-newLocalState = addCard(newLocalState, { title: "card1", done: false })
-newLocalState = addCard(newLocalState, { title: "card1", done: false })
-newLocalState = addCard(newLocalState, { title: "card1", done: false })
+
+for (let i = 0; i < 20; i++) {
+    newLocalState = addCard(newLocalState, { title: "card1", done: false })
+}
+
 changes = getChanges(localState, newLocalState)
 
 // apply to remoteState
@@ -97,3 +99,11 @@ remoteState = newRemoteState
 
 console.log("localstate", newLocalState.cards.length)
 console.log("remoteState", newRemoteState.cards.length)
+
+// console.log("savedState", Automerge.save(localState))
+
+// const history = Automerge.getHistory(localState)
+
+// history.forEach(state => {
+//     console.dir(state.snapshot)
+// })
