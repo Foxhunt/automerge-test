@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "compile:run:watch": "tsc & nodemon -w dist dist/index.js",
+    "compile:run:watch": "tsc & nodemon -L dist/index.js",
     "debug": "tsc & nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "automerge": "^0.14.1",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2"
   }
 }
